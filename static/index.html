@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blackjack Game</h1>
+        
+        <!-- Game Setup -->
+        <div id="setup" class="game-section">
+            <h2>Welcome to Blackjack!</h2>
+            <div class="form-group">
+                <label for="playerNames">Enter player names (comma separated):</label>
+                <input type="text" id="playerNames" placeholder="Alice,Bob,Charlie">
+            </div>
+            <button id="startBtn" onclick="startGame()">Start Game</button>
+        </div>
+        
+        <!-- Betting Phase -->
+        <div id="betting" class="game-section" style="display:none;">
+            <h2>Place Your Bets</h2>
+            <div id="bettingArea"></div>
+        </div>
+        
+        <!-- Game Play -->
+        <div id="gameplay" class="game-section" style="display:none;">
+            <div id="dealerArea" class="card-area">
+                <h2>Dealer</h2>
+                <div id="dealerCards" class="cards"></div>
+                <div id="dealerPoints" class="points"></div>
+            </div>
+            
+            <div id="playersArea" class="players"></div>
+            
+            <div id="actions" class="action-buttons">
+                <button id="hitBtn" onclick="hit()">Hit</button>
+                <button id="standBtn" onclick="stand()">Stand</button>
+            </div>
+            
+            <div id="gameMessage" class="message"></div>
+        </div>
+        
+        <!-- Round End -->
+        <div id="roundEnd" class="game-section" style="display:none;">
+            <h2>Round Results</h2>
+            <div id="results"></div>
+            <button id="nextRoundBtn" onclick="nextRound()">Next Round</button>
+        </div>
+    </div>
+    
+    <script src="blackjack.js"></script>
+</body>
+</html>
